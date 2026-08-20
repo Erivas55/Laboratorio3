@@ -9,7 +9,7 @@ Route::get('/', function () {
 
 Route::get('/academic/courses', [AcademicController::class, 'courses'])
     ->middleware([
+        'measure.response.time',
         'trace.request',
         'require.client.key',
-        'measure.response.time',
     ]);
